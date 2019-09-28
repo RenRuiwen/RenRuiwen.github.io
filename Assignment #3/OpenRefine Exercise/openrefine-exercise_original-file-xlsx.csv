@@ -1,0 +1,26 @@
+company,Product,number,geocode2,gender,initial,name
+phillips,radio,5,"Groningensingel 147, arnhem, the netherlands",m,p,Jansen
+phillips,radio,43,"Groningensingel 148, arnhem, the netherlands",m,p,Hansen
+phillips,computer,3,"Groningensingel 149, arnhem, the netherlands",m,j,Gansen
+phillips,computer,34,"Groningensingel 150, arnhem, the netherlands",m,p,Mansen
+phillips,computer,12,"Groningensingel 151, arnhem, the netherlands",m,p,Fransen
+phillips,radio,23,"Groningensingel 152, arnhem, the netherlands",m,p,Franssen
+akzo,tv,43,"Leeuwardenweg 178, arnhem, the netherlands",m,p,Bansen
+akzo,tv,12,"Leeuwardenweg 179, arnhem, the netherlands",m,p,Vansen
+akzo,computer,5,"Leeuwardenweg 180, arnhem, the netherlands",m,p,Bransen
+akzo,radio,34,"Leeuwardenweg 181, arnhem, the netherlands",m,p,Janssen
+akzo,table,5,"Leeuwardenweg 182, arnhem, the netherlands",f,l, Rokken
+akzo,table,9,"Leeuwardenweg 183, arnhem, the netherlands",f,l, Lokken
+akzo,computer,8,"Leeuwardenweg 184, arnhem, the netherlands",f,l, Mokken
+phillips,radio,56,"Delfzijlstraat 54, arnhem, the netherlands",f,l, Mokken
+phillips,tv,67,"Delfzijlstraat 55, arnhem, the netherlands",f,l, Mokken
+phillips,tv,21,"Delfzijlstraat 56, arnhem, the netherlands",f,l, Mokken
+Van Houten,computer,45,"Delfzijlstraat 57, arnhem, the netherlands",f,l, Sokken
+Van Houten,tv,56,"Delfzijlstraat 58, arnhem, the netherlands",f,l, Wokken
+Van Houten,tv,65,"Delfzijlstraat 59, arnhem, the netherlands",f,l, Kokken
+Van Houten,computer,21,"Delfzijlstraat 60, arnhem, the netherlands",f,l, Bokken
+Van Houten,radio,23,"Delfzijlstraat 61, arnhem, the netherlands",f,l, Dokken
+unilever,computer,3,"Jourestraat 23, arnhem, the netherlands",f,l, Gokken
+unilever,table,4,"Jourestraat 24, arnhem, the netherlands",f,l, Stokken
+unilever,table,6,"Jourestraat 25, arnhem, the netherlands",f,l, Rokken
+unilever,table,8,"Jourestraat 26, arnhem, the netherlands",f,l, Rokken
