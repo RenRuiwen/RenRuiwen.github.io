@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Calculator</title>
+</head>
+
+<style>
+    
+    table{    
+        padding:15px;
+        height:100%;
+        color:white;
+    }
+    td{
+        border-radius: 14px;
+        padding:15px;
+        height:100%;
+        color:black;
+    }
+    .container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+        border-radius: 14px;
+        padding-bottom: 20px;
+        width: 608px;	
+    }
+    
+    .btn{
+        border-radius: 14px;
+        margin:50;
+        top:50;
+        border:10px;
+        outline:none;
+        width: 149px;
+        line-height: 80px;
+        font-size: x-large;
+        color:ivory;
+        background-color: rgb(161, 159, 159);
+    }
+    .btn_click{
+        border-radius: 14px;
+        border:10px;
+        outline:none;
+        width: 302px;
+        line-height: 70px;
+        font-size: x-large;
+        color: rgb(0, 0, 0);
+        background-color: rgb(224, 158, 224);
+    }
+    .txt{
+        border-radius: 50px;
+        width: 600px;
+        line-height: 100px;
+        font-size: x-large;
+        color:black;
+        text-align: right;
+    }
+       
+</style>
+
+<script>
+
+
+   window.onload = function () {
+        var way_res = [];
+        var btn_txt = document.getElementsByClassName("btn");
+        var txt = document.getElementsByClassName("txt")[0];
+        var btn_way = document.getElementsByClassName("btn_click");
+        for (var i = 0; i < btn_way.length; i++) {
+            btn_way[i].onclick = function () {
+                if (this.value == "AC") {
+                    way_res = [];
+                    txt.value = "";
+                }
+                else {
+                    txt.value = txt.value.substr(0, txt.value.length - 1);
+                }
+            }
+        }
+        for (var i = 0; i < btn_txt.length; i++) {
+            btn_txt[i].onclick = function () {
+                if (txt.value == "" && this.value == ".") {
+                    txt.value = "0.";
+                }
+                else {
+                    if (!isNaN(this.value) || this.value == ".") {
+                        if (txt.value.indexOf(".") != -1) {
+                            if (this.value != ".") {
+                                txt.value += this.value;
+                            }
+                        }
+                        else {
+                            txt.value += this.value;
+                        }
+                    }
+                    else {
+                        if (this.value != "=") {
+                            way_res[way_res.length] = txt.value;
+                            way_res[way_res.length] = this.value;
+                            txt.value = "";
+                        }
+                        else {
+                            way_res[way_res.length] = txt.value;
+                            txt.value = eval(way_res.join(""));
+                            way_res = [];
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<Body>
+    <div class="container">
+            <tr>
+                    <td colspan="4"><input class="txt" type="text" disabled/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input class="btn_click" type="button" value="AC"/></td>
+                    <td colspan="2"><input class="btn_click"  type="button" value="DEL"/></td>
+                </tr>
+                <tr>
+                    <td><input class="btn" type="button" value="7"/></td>
+                    <td><input class="btn" type="button" value="8"/></td>
+                    <td><input class="btn" type="button" value="9"/></td>
+                    <td><input class="btn" type="button" value="*"/></td>
+            
+                </tr>
+                <tr>
+                    <td><input class="btn" type="button" value="4"/></td>
+                    <td><input class="btn" type="button" value="5"/></td>
+                    <td><input class="btn" type="button" value="6"/></td>
+                    <td><input class="btn" type="button" value="/"/></td>
+            
+                </tr>
+                <tr>
+                    <td><input class="btn" type="button" value="1"/></td>
+                    <td><input class="btn" type="button" value="2"/></td>
+                    <td><input class="btn" type="button" value="3"/></td>
+                    <td><input class="btn" type="button" value="-"/></td>
+            
+                </tr>
+                <tr>
+                    <td><input class="btn" type="button" value="0"/></td>
+                    <td><input class="btn" type="button" value="."/></td>
+                    <td><input class="btn" type="button" value="+"/></td>
+                    <td><input class="btn" type="button" value="="/></td>        
+                </tr>
+    
+    </div>
+    
+
+</Body>
