@@ -11,8 +11,8 @@
       <body>  
            <br /><br />  
            <div class="container">  
-                <h1 align="center">Assignment5 Show JSON Data in Jquery Datatables</h3><br />  
-                <h3 align="center">SakuraTrip Database</h3><br />  
+                <h1 align="center">Assignment5 Show JSON Data in Jquery Datatables</h3><br/>  
+                <h3 align="center">SakuraTrip Database</h3><br/>  
                 <table id="data-table" class="table table-bordered">  
                      <thead>  
                           <tr>  
@@ -31,9 +31,9 @@
       $('#data-table').DataTable({  
            "ajax"     :     "sakuratrip_data.json",  
            "columns"     :     [  
-                {     "data"     :     "area"     },  
+                {     "data"     :     "Area"     },  
                 {     "data"     :     "location_name"},  
-                {     "data"     :     "location_address"}  
+                {     "data"     :     "location_address"}, 
                 {     "data"     :     "location_timeperiod"}  
            ]  
       });  
