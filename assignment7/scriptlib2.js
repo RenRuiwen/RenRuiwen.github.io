@@ -81,7 +81,7 @@ $(document).ready(function(){
                     type : 'bar'
                 },
                 axis: {
-                  x: {label: 'spot'},
+                  x: {label: 'timeperiod'},
                   y: {label: '# of spots'}
                 },
                 bar: {
