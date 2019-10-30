@@ -80,18 +80,20 @@
     var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,});
     var map = L.map('map')
           .addLayer(mapboxTiles)
-          .setView([22.287111, 114.191667], 13);
+          .setView([36.327590, 138.417529], 4);
     var items = [];
-    var airtable_read_endpoint = "https://api.airtable.com/v0/appKIU0zkdHt3AVTL/Venues?api_key=keycj6dRwXwYLEjiv";
+    var airtable_read_endpoint = "https://api.airtable.com/v0/appDqfGG2gvEYhlZW/map?api_key=keyaDyjnSKK65cIPQ";
     var data = [];
     $.getJSON(airtable_read_endpoint, function(result) {
            $.each(result.records, function(key,value) {
                items = {};
-                   items["name"] = value.fields.Name;
-                   items["url"] = value.fields.url;
+                   items["place"] = value.fields.place;
+                   items["area"] = value.fields.area;
+                   items["chinese_name"] = value.fields.chinese_name;
+                   items["latitud"] = value.fields.lat;
+                   items["longitud"] = value.fields.lng;
+                   items["picture"] = value.fields.pic;
                    items["image_url"] = value.fields.img_url;
-                   items["latitud"] = value.fields.Lat;
-                   items["longitud"] = value.fields.Lng;
                    data.push(items);
                    console.log(items);
             }); // end .each
