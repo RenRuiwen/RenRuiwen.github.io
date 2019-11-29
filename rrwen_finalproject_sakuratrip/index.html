@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
   <meta charset="utf-8">
   <title>Sakura Trip</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -85,6 +86,7 @@
         <ul class="nav-menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#region">Region</a></li>
           <li><a href="#spots">Spots</a></li>
           <li><a href="#special">Special Experience</a></li>
           <li><a href="#contact">Contact Us</a></li>
@@ -146,13 +148,12 @@
       <div style="text-align:center"> 
           <img src="img/timeline2019.jpg" alt="2019timeline" width="800" height="560"></img>
       </div>
-      <br/>
-      <br/>
-      
+     
+    </section>
   <!-- /Timeline -->    
 
-  <!-- Spots -->        
-      <section class="team" id="spots">
+  <!-- Region-->        
+      <section class="team" id="region">
           <div class="container">
               <h2 class="text-center"> 
                   Region
@@ -365,10 +366,12 @@
     </div>
   </section>
   
-<!-- /Spots -->
+<!-- /Region -->
 
+
+ <!-- table&chart -->
 <section class="cta">
-  <!-- table&chart -->
+ 
   
   <section id="spots" class="cta text-center">
     <div class="container">
@@ -391,6 +394,8 @@
   </div>
   </div>
   </section>
+
+<!-- /table&chart -->
   
 <!-- specific spots  -->
 
@@ -620,88 +625,63 @@
 
 
 
-
+<!-- find on map -->
   <section class="portfolio" id="spots">
-  <div class="col-xs-12 col-sm-12 col-md-12">
-    <div class="container text-center">
-      <button type="button" class="btn btn-ghost" id="roll_up" onclick="show_districts();">SHOW ON MAP</button>
-    </div>
-  <br>
-  <div id="map" style="width: 600px; height: 400px"></div>
-</div>
-<!-- column -->
-</div>
-<!-- row -->
-</div>
-<!-- end col -->
-</div>
-<!--end row -->
-</div>
-<!-- container -->
-<script>
-var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,});
-var map = L.map('map')
-.addLayer(mapboxTiles)
-.setView([36.327590, 138.417529], 4);
-var items = [];
-var airtable_read_endpoint = "https://api.airtable.com/v0/appDqfGG2gvEYhlZW/map?api_key=keyaDyjnSKK65cIPQ";
-var data = [];
-$.getJSON(airtable_read_endpoint, function(result) {
- $.each(result.records, function(key,value) {
-     items = {};
-         items["place"] = value.fields.place;
-         items["area"] = value.fields.area;
-         items["chinese_Name"] = value.fields.chinese_name;
-         items["latitud"] = value.fields.lat;
-         items["longitud"] = value.fields.lng;
-         items["picture"] = value.fields.pic;
-         items["image_url"] = value.fields.img_url;
-         data.push(items);
-         console.log(items);
-  }); // end .each
-}); // end getJSON
-</script>
-<script>
-function show_districts(){
-for (var i in data) {
-var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
-L.marker( latlng )
-    .bindPopup( '<a href="' + data[i].url + '" target="_blank">' + '<img src="' + data[i].image_url+'" width = "80px"><br>'+data[i].name + '</a>' )
-    .addTo(map);
-}
-}
-</script>
-<script src="scriptlib2.js"></script>
-
-</section>
-  <!--/ map -->
-    
-
   
+    <div class="container text-center">
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1449QTT05MCjgbF6umXEINoGBvBXKi-SE" width="640" height="480"></iframe>
+   </div>
+
+
+<!-- /find on map -->
 
     
+<br>
 
+<!-- special experience -->
+<section id="spots" class="cta text-center">
+    <h2 class="text-center" style="color:white">
+        Special experience
+      </h2>
 
+      <p class="lead"  style="text-align: center;line-height: 2;color: rgb(255, 232, 243);opacity:1"> 
+          大自然带来的不仅仅是樱花季美丽的风景，对于日本和樱花的爱好者们，樱花的衍生物，例如樱花制成的食品、饮品等等都是这美丽的樱花带来的馈赠。
+        </p>
+</section>
 
-
-
-  <section class="team" id="team">
+  <section class="team" id="special">
     <div class="container">
-      <h2 class="text-center">
-          Meet our team
-        </h2>
-
+     
+    
+      <!-- sakura icon -->
+                
+                </div>
+                <div class="container text-center">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a class="hero-brand" href="#special" title="Home"><img alt="Bell Logo" src="img/sakura.jpg"width="50px" height="50px"></a>
+                      </div>
+                      
+                    </div>
+              
+      <!-- /sakura icon -->
+      
+      <div class="container">
+          <h3 class="text-center" >
+              Sakura food
+            </h3>
+            <br>
       <div class="row">
         <div class="col-sm-3 col-xs-6">
           <div class="card card-block">
-            <a href="#"><img alt="" class="team-img" src="img/team-1.jpg">
+            <a href="https://www.xiachufang.com/recipe/101819860/"><img alt="" class="team-img" src="img/food1.jpg">
               <div class="card-title-wrap">
-                <span class="card-title">Sergio Fez</span> <span class="card-text">Art Director</span>
+                <span class="card-title">樱花果冻</span> <span class="card-text">Sakura Jelly</span>
               </div>
 
               <div class="team-over">
                 <h4 class="hidden-md-down">
-                  Connect with me
+                  点击查看做法
                 </h4>
 
                 <nav class="social-nav">
@@ -709,7 +689,7 @@ L.marker( latlng )
             </nav>
 
             <p>
-              Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+                一包吉利丁粉和一点砂糖就可以制作出来美味又健康的果冻了！
             </p>
           </div>
           </a>
@@ -718,14 +698,14 @@ L.marker( latlng )
 
       <div class="col-sm-3 col-xs-6">
         <div class="card card-block">
-          <a href="#"><img alt="" class="team-img" src="img/team-2.jpg">
+          <a href="https://www.xiachufang.com/recipe/100477769/"><img alt="" class="team-img" src="img/food2.jpg">
               <div class="card-title-wrap">
-                <span class="card-title">Sergio Fez</span> <span class="card-text">Art Director</span>
+                <span class="card-title">盐渍樱花</span> <span class="card-text">桜の塩漬け</span>
               </div>
 
               <div class="team-over">
                 <h4 class="hidden-md-down">
-                  Connect with me
+                    点击查看做法
                 </h4>
 
                 <nav class="social-nav">
@@ -733,7 +713,7 @@ L.marker( latlng )
           </nav>
 
           <p>
-            Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+              日本的经典传统做法，用盐腌渍过的樱花有独特的味道哦！
           </p>
         </div>
         </a>
@@ -742,14 +722,14 @@ L.marker( latlng )
 
     <div class="col-sm-3 col-xs-6">
       <div class="card card-block">
-        <a href="#"><img alt="" class="team-img" src="img/team-3.jpg">
+        <a href="https://www.xiachufang.com/recipe/101768353/"><img alt="" class="team-img" src="img/food3.jpg">
               <div class="card-title-wrap">
-                <span class="card-title">Sergio Fez</span> <span class="card-text">Art Director</span>
+                <span class="card-title">樱饼</span> <span class="card-text">Sakuramochi</span>
               </div>
 
               <div class="team-over">
                 <h4 class="hidden-md-down">
-                  Connect with me
+                    点击查看做法
                 </h4>
 
                 <nav class="social-nav">
@@ -757,7 +737,7 @@ L.marker( latlng )
         </nav>
 
         <p>
-          Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+          甜甜的味道，糯糯的口感，最适合搭配下午茶来上一个了！
         </p>
       </div>
       </a>
@@ -766,14 +746,14 @@ L.marker( latlng )
 
     <div class="col-sm-3 col-xs-6">
       <div class="card card-block">
-        <a href="#"><img alt="" class="team-img" src="img/team-4.jpg">
+        <a href="https://www.xiachufang.com/recipe/101759378/"><img alt="" class="team-img" src="img/food4.jpg">
               <div class="card-title-wrap">
-                <span class="card-title">Sergio Fez</span> <span class="card-text">Art Director</span>
+                <span class="card-title">樱花大福</span> <span class="card-text">Sakura Daifuku</span>
               </div>
 
               <div class="team-over">
                 <h4 class="hidden-md-down">
-                  Connect with me
+                    点击查看做法
                 </h4>
 
                 <nav class="social-nav">
@@ -781,7 +761,7 @@ L.marker( latlng )
         </nav>
 
         <p>
-          Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+          大福是日本最常见的点心之一，你有没有尝过樱花味道的大福呢？
         </p>
       </div>
       </a>
@@ -789,149 +769,268 @@ L.marker( latlng )
     </div>
     </div>
     </div>
+
+    <!-- sakura icon 2-->
+                
+  </div>
+  <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="hero-brand" href="#special" title="Home"><img alt="Bell Logo" src="img/sakura.jpg"width="50px" height="50px"></a>
+        </div>
+        
+      </div>
+
+<!-- /sakura icon 2-->
+
+    <div class="container">
+    <h3 class="text-center" >
+    Sakura drink
+    </h3>
+    <br>
+    <div class="row">
+    <div class="col-sm-3 col-xs-6">
+    <div class="card card-block">
+    <a href="https://www.kitaoka-honten.com/d/142"><img alt="" class="team-img" src="img/drink1.jpg">
+    <div class="card-title-wrap">
+      <span class="card-title">樱花酒</span> <span class="card-text">Sakura Sake</span>
+    </div>
+
+    <div class="team-over">
+      <h4 class="hidden-md-down">
+        点击查看主页
+      </h4>
+
+      <nav class="social-nav">
+        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+    </nav>
+
+    <p>
+        日本奈良吉野特别限定款款的樱花酒，完整的一朵樱花盛开在瓶子里，轻轻晃动瓶身花瓣就会随着液体的波动翩翩起舞！
+    </p>
+    </div>
+    </a>
+    </div>
+    </div>
+
+    <div class="col-sm-3 col-xs-6">
+    <div class="card card-block">
+    <a href="https://www.xiachufang.com/recipe/1098234/"><img alt="" class="team-img" src="img/drink2.jpg">
+    <div class="card-title-wrap">
+      <span class="card-title">樱花茶</span> <span class="card-text">Sakura Tea</span>
+    </div>
+
+    <div class="team-over">
+      <h4 class="hidden-md-down">
+          点击查看做法
+      </h4>
+
+      <nav class="social-nav">
+        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+    </nav>
+
+    <p>
+    淡淡的花香沁人心脾！
+    </p>
+    </div>
+    </a>
+    </div>
+    </div>
+
+    <div class="col-sm-3 col-xs-6">
+    <div class="card card-block">
+    <a href="https://www.japaholic.com/cn/article/691881/"><img alt="" class="team-img" src="img/drink3.jpg">
+    <div class="card-title-wrap">
+      <span class="card-title">樱花满满星冰乐</span> <span class="card-text">Sakura Frappuccino</span>
+    </div>
+
+    <div class="team-over">
+      <h4 class="hidden-md-down">
+          点击查看详情
+      </h4>
+
+      <nav class="social-nav">
+        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+    </nav>
+
+    <p>
+    星巴克也推出过樱花季限定的星冰乐哦！
+    </p>
+    </div>
+    </a>
+    </div>
+    </div>
+
+    <div class="col-sm-3 col-xs-6">
+    <div class="card card-block">
+    <a href="https://www.xiachufang.com/recipe/104044661/"><img alt="" class="team-img" src="img/drink4.jpg">
+    <div class="card-title-wrap">
+      <span class="card-title">樱花苏打</span> <span class="card-text">Sakura Soda</span>
+    </div>
+
+    <div class="team-over">
+      <h4 class="hidden-md-down">
+          点击查看做法
+      </h4>
+
+      <nav class="social-nav">
+        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+    </nav>
+
+    <p>
+    冒着泡泡的樱花气泡水，夏天的时候最适合来一杯啦！
+    </p>
+    </div>
+    </a>
+    </div>
+    </div>
+    </div>
+
+    
+  </div>
   </section>
-  <!-- /Team -->
+  <!-- /special experience -->
+
   <!-- @component: footer -->
 
   <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h2 class="section-title">Contact Us</h2>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-4">
-          <div class="info">
-            <div>
-              <i class="fa fa-map-marker"></i>
-              <p>A108 Adam Street<br>New York, NY 535022</p>
-            </div>
-
-            <div>
-              <i class="fa fa-envelope"></i>
-              <p>info@example.com</p>
-            </div>
-
-            <div>
-              <i class="fa fa-phone"></i>
-              <p>+1 5589 55488 55s</p>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="col-lg-5 col-md-8">
-          <div class="form">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="bottom">
       <div class="container">
         <div class="row">
-
-          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
-            <p class="copyright-text">
-              © BELL Theme
-            </p>
-            <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
-              -->
-             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          <div class="col-md-12 text-center">
+            <h2 class="section-title">Contact Us</h2>
+          </div>
+        </div>
+  
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-4">
+            <div class="info">
+              <div>
+                <i class="fa fa-map-marker"></i>
+                <p style="color:black">The Chinese University of Hongkong</p>
+              </div>
+  
+              <div>
+                <i class="fa fa-envelope"></i>
+                <p style="color:black">rrweniris@gmail.com</p>
+              </div>
+  
+              <div>
+                <i class="fa fa-phone"></i>
+                <p style="color:black">+1 97506697</p>
+              </div>
+  
             </div>
           </div>
-
-          <div class="col-lg-6 col-xs-12 text-lg-right text-center">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="index.html">Home</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#about">About Us</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#features">Features</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#portfolio">Portfolio</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#team">Team</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
+  
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
           </div>
-
+  
         </div>
       </div>
-    </div>
-  </footer>
-  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+    </section>
+  
+    <footer class="site-footer">
+      <div class="bottom">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+              <p class="copyright-text">
+                Copyright © 2019 COMM 5961 MisaRen
+              </p>
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
+                -->
+               Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> 
 
-
-  <!-- Required JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/tether/js/tether.min.js"></script>
-  <script src="lib/stellar/stellar.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/easing/easing.js"></script>
-  <script src="lib/stickyjs/sticky.js"></script>
-  <script src="lib/parallax/parallax.js"></script>
-  <script src="lib/lockfixed/lockfixed.min.js"></script>
-
-  <!-- Template Specisifc Custom Javascript File -->
-  <script src="js/custom.js"></script>
-  <script src="js/scriptlib2.js"></script>
-  <script src="contactform/contactform.js"></script>
-
-</body>
-</html>
-
-
-
-
-
-
+               <p style="font-size: 15;color:white;line-height:1">
+                This is a website only for class final project<br>
+                Will not be used in any business purposes
+              </p>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="index.html">Home</a>
+                </li>
+  
+                <li class="list-inline-item">
+                  <a href="#timeline">Timeline</a>
+                </li>
+  
+                <li class="list-inline-item">
+                  <a href="#region">Region</a>
+                </li>
+  
+                <li class="list-inline-item">
+                  <a href="#spots">Spots</a>
+                </li>
+  
+                <li class="list-inline-item">
+                  <a href="#special">Special Experience</a>
+                </li>
+  
+                <li class="list-inline-item">
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </footer>
+    <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+  
+  
+    <!-- Required JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/tether/js/tether.min.js"></script>
+    <script src="lib/stellar/stellar.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/easing/easing.js"></script>
+    <script src="lib/stickyjs/sticky.js"></script>
+    <script src="lib/parallax/parallax.js"></script>
+    <script src="lib/lockfixed/lockfixed.min.js"></script>
+  
+    <!-- Template Specisifc Custom Javascript File -->
+    <script src="js/custom.js"></script>
+  
+    <script src="contactform/contactform.js"></script>
+  
+  </body>
+  </html>
