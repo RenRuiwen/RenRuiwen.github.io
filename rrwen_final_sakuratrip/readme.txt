@@ -1,6 +1,2 @@
-Thanks for downloading this theme!
-
-Theme Name: Bell
-Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
-Author: BootstrapMade.com
-Author URL: https://bootstrapmade.com
+This is the final project for COMM5961 
+Created by Ren Ruiwen 1155131527
